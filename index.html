@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools Online - Free Developer Utilities</title>
+    <meta name="description" content="Free online developer tools: JSON Formatter, Text Counter, Color Palette Generator, Base64 Encoder/Decoder, URL Encoder/Decoder. No signup required.">
+    <meta name="keywords" content="json formatter, text counter, color palette, base64 encoder, url encoder, developer tools, online tools, free tools">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jko-yohan.github.io/devtools-online/">
+    <meta property="og:title" content="DevTools Online - Free Developer Utilities">
+    <meta property="og:description" content="Free online developer tools. JSON Formatter, Text Counter, Color Palette, Base64, URL Encoder and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jko-yohan.github.io/devtools-online/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">DevTools <span>Online</span></h1>
+            <p class="tagline">Free Developer Utilities - No Signup Required</p>
+        </div>
+    </header>
+
+    <nav class="tool-nav">
+        <div class="container">
+            <button class="tab active" data-tool="json">JSON Formatter</button>
+            <button class="tab" data-tool="text">Text Counter</button>
+            <button class="tab" data-tool="color">Color Palette</button>
+            <button class="tab" data-tool="base64">Base64</button>
+            <button class="tab" data-tool="url">URL Encode</button>
+            <button class="tab" data-tool="hash">Hash Generator</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- JSON Formatter -->
+        <section id="tool-json" class="tool-panel active">
+            <h2>JSON Formatter & Validator</h2>
+            <p>Paste your JSON to format, validate, and beautify it instantly.</p>
+            <div class="tool-layout">
+                <div class="input-group">
+                    <label>Input JSON</label>
+                    <textarea id="json-input" placeholder='{"name":"John","age":30,"city":"Seoul"}'></textarea>
+                </div>
+                <div class="btn-group">
+                    <button onclick="formatJSON()">Format</button>
+                    <button onclick="minifyJSON()" class="secondary">Minify</button>
+                    <button onclick="copyOutput('json-output')" class="secondary">Copy</button>
+                    <button onclick="clearFields('json-input','json-output')" class="secondary">Clear</button>
+                </div>
+                <div class="output-group">
+                    <label>Output</label>
+                    <pre id="json-output" class="output-box"></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Counter -->
+        <section id="tool-text" class="tool-panel">
+            <h2>Text / Character Counter</h2>
+            <p>Count characters, words, sentences, and paragraphs in your text.</p>
+            <div class="tool-layout">
+                <div class="input-group full-width">
+                    <textarea id="text-input" placeholder="Type or paste your text here..." oninput="countText()"></textarea>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value" id="char-count">0</span>
+                        <span class="stat-label">Characters</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="char-no-space">0</span>
+                        <span class="stat-label">No Spaces</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="word-count">0</span>
+                        <span class="stat-label">Words</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="sentence-count">0</span>
+                        <span class="stat-label">Sentences</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="paragraph-count">0</span>
+                        <span class="stat-label">Paragraphs</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="byte-count">0</span>
+                        <span class="stat-label">Bytes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section id="tool-color" class="tool-panel">
+            <h2>Color Palette Generator</h2>
+            <p>Generate beautiful color palettes. Click a color to copy its hex code.</p>
+            <div class="tool-layout">
+                <div class="btn-group">
+                    <button onclick="generatePalette()">Generate New Palette</button>
+                    <button onclick="generatePalette('mono')" class="secondary">Monochrome</button>
+                    <button onclick="generatePalette('pastel')" class="secondary">Pastel</button>
+                    <button onclick="generatePalette('dark')" class="secondary">Dark</button>
+                </div>
+                <div id="palette-display" class="palette-grid"></div>
+                <div class="btn-group">
+                    <button onclick="exportPaletteCSS()" class="secondary">Export CSS</button>
+                </div>
+                <pre id="color-output" class="output-box" style="display:none;"></pre>
+            </div>
+        </section>
+
+        <!-- Base64 -->
+        <section id="tool-base64" class="tool-panel">
+            <h2>Base64 Encoder / Decoder</h2>
+            <p>Encode text to Base64 or decode Base64 back to text.</p>
+            <div class="tool-layout">
+                <div class="input-group">
+                    <label>Input</label>
+                    <textarea id="base64-input" placeholder="Enter text or Base64 string..."></textarea>
+                </div>
+                <div class="btn-group">
+                    <button onclick="encodeBase64()">Encode</button>
+                    <button onclick="decodeBase64()">Decode</button>
+                    <button onclick="copyOutput('base64-output')" class="secondary">Copy</button>
+                    <button onclick="clearFields('base64-input','base64-output')" class="secondary">Clear</button>
+                </div>
+                <div class="output-group">
+                    <label>Output</label>
+                    <pre id="base64-output" class="output-box"></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- URL Encoder -->
+        <section id="tool-url" class="tool-panel">
+            <h2>URL Encoder / Decoder</h2>
+            <p>Encode or decode URL components safely.</p>
+            <div class="tool-layout">
+                <div class="input-group">
+                    <label>Input</label>
+                    <textarea id="url-input" placeholder="Enter URL or encoded string..."></textarea>
+                </div>
+                <div class="btn-group">
+                    <button onclick="encodeURL()">Encode</button>
+                    <button onclick="decodeURL()">Decode</button>
+                    <button onclick="copyOutput('url-output')" class="secondary">Copy</button>
+                    <button onclick="clearFields('url-input','url-output')" class="secondary">Clear</button>
+                </div>
+                <div class="output-group">
+                    <label>Output</label>
+                    <pre id="url-output" class="output-box"></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hash Generator -->
+        <section id="tool-hash" class="tool-panel">
+            <h2>Hash Generator (MD5 / SHA)</h2>
+            <p>Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text.</p>
+            <div class="tool-layout">
+                <div class="input-group">
+                    <label>Input Text</label>
+                    <textarea id="hash-input" placeholder="Enter text to hash..."></textarea>
+                </div>
+                <div class="btn-group">
+                    <button onclick="generateHashes()">Generate Hashes</button>
+                    <button onclick="clearFields('hash-input','hash-output')" class="secondary">Clear</button>
+                </div>
+                <div class="output-group">
+                    <label>Hash Results</label>
+                    <div id="hash-output" class="hash-results"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot">
+            <div class="ad-placeholder">
+                <!-- Google AdSense ad unit will go here -->
+                <!-- Replace with your AdSense code after approval -->
+                <p>Advertisement</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DevTools Online. All tools run locally in your browser. No data is sent to any server.</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

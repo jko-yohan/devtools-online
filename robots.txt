@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jko-yohan.github.io/devtools-online/sitemap.xml
