@@ -27,13 +27,18 @@
 
 ```
 devtools-online/
-├── index.html      # 메인 페이지 (도구 6종 포함)
-├── style.css       # 스타일시트 (다크 테마, 반응형)
-├── app.js          # 도구 로직 (순수 JS)
-├── sitemap.xml     # 검색엔진 사이트맵
-├── robots.txt      # 크롤러 허용 설정
-├── .gitignore      # Git 제외 파일
-└── README.md       # 이 문서
+├── index.html                          # 메인 페이지 (도구 6종)
+├── style.css                           # 스타일시트 (다크 테마, 반응형)
+├── app.js                              # 도구 로직 (순수 JS)
+├── sitemap.xml                         # 검색엔진 사이트맵
+├── robots.txt                          # 크롤러 허용 설정
+├── google04b2a7cc1550b0a9.html         # Search Console 확인 파일
+├── .gitignore                          # Git 제외 파일
+├── README.md                           # 프로젝트 소개 (이 문서)
+├── STATUS.md                           # 현황 및 남은 작업
+├── PLAN.md                             # 개발 기획서
+├── GUIDE_ADSENSE.md                    # AdSense 설정 가이드
+└── GUIDE_USER.md                       # 사용 가이드
 ```
 
 ## 수정 방법
