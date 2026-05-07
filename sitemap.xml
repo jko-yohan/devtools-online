@@ -6,40 +6,4 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    <url>
-        <loc>https://jko-yohan.github.io/devtools-online/#json</loc>
-        <lastmod>2026-05-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://jko-yohan.github.io/devtools-online/#text</loc>
-        <lastmod>2026-05-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://jko-yohan.github.io/devtools-online/#color</loc>
-        <lastmod>2026-05-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://jko-yohan.github.io/devtools-online/#base64</loc>
-        <lastmod>2026-05-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://jko-yohan.github.io/devtools-online/#url</loc>
-        <lastmod>2026-05-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://jko-yohan.github.io/devtools-online/#hash</loc>
-        <lastmod>2026-05-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
 </urlset>
